@@ -1,7 +1,7 @@
 {
-    "name": "pxt-DHT11_DHT22",
-    "version": "0.0.2",
-    "description": "MakeCode extension for DHT11/DHT22 humidity and temperature sensors",
+    "name": "DHT11与DHT22温湿度传感器",
+    "version": "1.0",
+    "description": "DHT11及DHT22温湿度传感器，用于检测环境的温湿度数据",
     "dependencies": {
         "core": "*"
     },
