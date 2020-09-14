@@ -2,8 +2,8 @@
  * MakeCode editor extension for DHT11 and DHT22 humidity/temperature sensors
  * by Alan Wang
  */
-//% block="DHT11/DHT22温湿度传感器" weight=100 color=#ff8f3f icon="\uf043"
-namespace dht11_dht22 {
+//% block="温湿度传感器" weight=100 color=#ff8f3f icon="\uf043"
+namespace 温湿度传感器 {
 
     let _temperature: number = -999.0
     let _humidity: number = -999.0
@@ -13,7 +13,7 @@ namespace dht11_dht22 {
     * Query data from DHT11/DHT22 sensor. If you are using 4 pins/no PCB board versions, you'll need to pull up the data pin. 
     * It is also recommended to wait 1 (DHT11) or 2 (DHT22) seconds between each query.
     */
-    //% block="Query $DHT|Data pin $dataPin|Pin pull up $pullUp|Serial output $serialOtput|Wait 2 sec after query $wait"
+    //% block="设备 $DHT|数据引脚 $dataPin|引脚上拉 $pullUp|串行输出 $serialOtput|读取后延迟2秒 $wait"
     //% pullUp.defl=true
     //% serialOtput.defl=false
     //% wait.defl=true
@@ -110,7 +110,7 @@ namespace dht11_dht22 {
     /**
     * Read humidity/temperature data from lastest query of DHT11/DHT22
     */
-    //% block="Read $data"
+    //% block="读取 $data"
     export function readData(data: dataType): number {
         return data == dataType.humidity ? _humidity : _temperature
     }
@@ -118,7 +118,7 @@ namespace dht11_dht22 {
     /**
     * Determind if last query is successful (checksum ok)
     */
-    //% block="Last query successful?"
+    //% block="读取成功?"
     export function readDataSuccessful(): boolean {
         return _readSuccessful
     }
@@ -133,8 +133,8 @@ enum DHTtype {
 }
 
 enum dataType {
-    //% block="humidity"
+    //% block="湿度"
     humidity,
-    //% block="temperature"
+    //% block="温度"
     temperature,
 }
